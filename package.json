@@ -1,0 +1,19 @@
+{
+  "name": "markdown-for-wordpress",
+  "version": "1.0.0",
+  "private": true,
+  "author": "mengyaozhu",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "test": "node tests/registration.cjs && node tests/direct-paste.cjs && node tests/classic-dom.cjs",
+    "check": "node --check plugin/markdown-for-wordpress/assets/markdown.js && node --check plugin/markdown-for-wordpress/assets/classic.js && node --check plugin/markdown-for-wordpress/assets/editor.js && node scripts/check-php.cjs",
+    "package": "python3 scripts/package.py"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "devDependencies": {
+    "jsdom": "30.1.2",
+    "php-parser": "3.7.0"
+  }
+}
