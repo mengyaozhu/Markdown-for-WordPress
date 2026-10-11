@@ -222,7 +222,7 @@ See [LICENSE](LICENSE) for the complete license terms.
 
 ## Author
 
-Created and maintained by **mengyaozhu**.
+Created and maintained by [mengyaozhu](https://github.com/mengyaozhu).
 
 ## Contributing
 
