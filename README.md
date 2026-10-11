@@ -149,7 +149,7 @@ The goal of the project is straightforward and reliable conversion of the Markdo
 
 ## Installation
 
-Download the plugin ZIP from the GitHub Releases page.
+Download `markdown-for-wordpress-VERSION.zip` from the [GitHub Releases page](https://github.com/mengyaozhu/Markdown-for-WordPress/releases).
 
 In WordPress:
 
@@ -188,6 +188,8 @@ python3 scripts/package.py
 ```
 
 The generated installable ZIP is placed in `dist/`.
+
+Releases are published automatically when a `vMAJOR.MINOR.PATCH` tag is pushed. The tag must match the versions in `package.json`, `package-lock.json`, the plugin header and the plugin stable tag. The release workflow validates versions, runs checks and tests, packages the plugin and uploads the installable ZIP to GitHub Releases.
 
 ### Repository structure
 
