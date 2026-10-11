@@ -2,150 +2,14 @@
 
 **Copy Markdown. Paste it into WordPress. Publish.**
 
-Markdown for WordPress makes Markdown content work naturally in the WordPress post editor.
+Markdown for WordPress converts pasted Markdown into editable content in the Gutenberg and Classic editors. Write your article in Markdown, paste it into WordPress, then review and publish it.
 
-If you write articles in Markdown—or generate content as `.md` files—you should not have to manually remove Markdown syntax, convert the file to HTML, rebuild headings and lists, or use a special publishing workflow just to put the article on WordPress.
+## Features
 
-With Markdown for WordPress, simply copy the Markdown content and paste it into the WordPress post editor.
-
-```text
-Markdown file
-     ↓
-Copy
-     ↓
-Paste into WordPress
-     ↓
-Properly formatted post
-     ↓
-Publish
-```
-
-The plugin converts the pasted Markdown into normal WordPress content so that it is properly formatted in the editor and properly displayed in the published post.
-
-## Why Markdown for WordPress?
-
-WordPress and Markdown use different content formats.
-
-A Markdown article might look like this:
-
-```markdown
-# How to Write a Better Resume
-
-A good resume should show **what you accomplished**, not only what you were responsible for.
-
-## Focus on achievements
-
-Instead of:
-
-- Responsible for managing social media.
-
-Write:
-
-- Planned and published weekly content across three social media channels.
-
-> Describe the work. Demonstrate the contribution.
-
-[Learn more](https://example.com)
-```
-
-Normally, pasting Markdown into an editor can leave Markdown syntax visible or require additional conversion and cleanup.
-
-Markdown for WordPress is designed to remove that extra step.
-
-Copy the Markdown and paste it into the WordPress editor. The plugin recognizes the Markdown structure and converts it into properly formatted WordPress content.
-
-## How It Works
-
-### Gutenberg / Block Editor
-
-Create or edit a WordPress post and paste your Markdown into an empty Paragraph block.
-
-The conversion happens automatically.
-
-Markdown structures are converted into native WordPress blocks where appropriate, including:
-
-- Headings
-- Paragraphs
-- Bold and italic text
-- Strikethrough
-- Links
-- Images
-- Ordered lists
-- Unordered lists
-- Blockquotes
-- Code blocks
-- Horizontal separators
-- Tables
-
-After conversion, the content can be edited normally using the WordPress block editor.
-
-Existing blocks in the post are preserved when using the normal paste workflow.
-
-### Classic Editor
-
-Markdown can also be pasted into the Classic Editor.
-
-When pasted in Code mode, the Markdown is automatically converted to standard HTML. You can then switch to Visual mode to review and edit the formatted article.
-
-Pasting Markdown directly into Visual mode is also supported.
-
-## No Special Frontend Processing
-
-Markdown for WordPress is a **conversion plugin**, not a frontend Markdown renderer.
-
-That distinction is intentional.
-
-The plugin converts your Markdown when you paste it into WordPress. The resulting post is stored as normal WordPress content.
-
-This means your published articles do not depend on the plugin continuously processing Markdown every time somebody visits the page.
-
-Your WordPress theme remains responsible for the visual presentation of the article, including fonts, colors, spacing, content width, heading styles and other design choices.
-
-If the plugin is later deactivated, content that has already been converted remains readable.
-
-## Markdown Support
-
-The plugin currently supports common Markdown used in articles and blog posts, including:
-
-```markdown
-# Heading 1
-## Heading 2
-### Heading 3
-
-Normal paragraph text.
-
-**Bold text**
-
-*Italic text*
-
-~~Strikethrough~~
-
-[Link text](https://example.com)
-
-- Unordered item
-- Another item
-
-1. Ordered item
-2. Another item
-
-> Blockquote
-
----
-
-`inline code`
-```
-
-Fenced code blocks, images and pipe-style Markdown tables are also supported.
-
-### Current limitations
-
-The plugin uses a lightweight Markdown parser rather than implementing the complete CommonMark specification.
-
-Some advanced Markdown syntax and extensions may therefore behave differently from dedicated CommonMark parsers.
-
-Current limitations include advanced escaping, complex link syntax and some Markdown extensions. Nested lists may also have limitations.
-
-The goal of the project is straightforward and reliable conversion of the Markdown commonly used for WordPress articles—not to implement every Markdown dialect.
+- Automatic Markdown conversion when pasting.
+- Native WordPress blocks in Gutenberg and standard HTML in Classic Editor.
+- Support for common article formatting, including images, code blocks and tables.
+- Optional Gutenberg import tool for title extraction and metadata handling.
 
 ## Installation
 
@@ -166,13 +30,39 @@ Then create a post and paste your Markdown into the editor.
 - WordPress 6.2 or later
 - PHP 7.4 or later
 
-## Optional Gutenberg Import Tool
+## Usage
 
-For normal use, you do not need an import interface or conversion button. Just paste Markdown into the editor.
+### Gutenberg / Block Editor
 
-The Gutenberg **⋮ → Plugins → Paste Markdown** interface is available for cases where you want additional control, including title extraction and metadata-preamble handling.
+Create or edit a post and paste Markdown into an empty **Paragraph** block. The plugin automatically converts it into native WordPress blocks where appropriate, which you can edit normally. Existing blocks are preserved during normal paste conversion.
 
-Unlike normal paste conversion, using the dialog's full Convert operation replaces the post body, so use it carefully when editing an existing post.
+### Classic Editor
+
+Paste Markdown in **Code** mode to convert it into HTML, then switch to **Visual** mode to review and edit the result. Pasting directly into Visual mode is also supported.
+
+### Optional Gutenberg import tool
+
+Open **⋮ → Plugins → Paste Markdown** for additional options, including title extraction and metadata-preamble handling. Normal paste conversion does not require this dialog.
+
+**The dialog's full Convert operation replaces the post body.** Use it carefully when editing an existing post.
+
+### Published content
+
+Conversion happens when you paste. Posts are stored as normal WordPress content and remain readable if the plugin is deactivated; no ongoing frontend Markdown processing is required. Your WordPress theme controls the visual presentation.
+
+## Supported Markdown
+
+- Headings and paragraphs
+- Bold, italic and strikethrough text
+- Links and images
+- Ordered and unordered lists
+- Blockquotes and horizontal separators
+- Inline code and fenced code blocks
+- Pipe-style tables
+
+### Limitations
+
+The plugin uses a lightweight parser and does not implement the complete CommonMark specification. Advanced escaping, complex link syntax, nested lists and some Markdown extensions may have limitations or behave differently from dedicated CommonMark parsers.
 
 ## Development
 
@@ -210,15 +100,7 @@ WordPress integration testing should additionally verify plugin activation, edit
 
 ## License
 
-Markdown for WordPress is licensed under **GPL-2.0-or-later**.
-
-WordPress itself is distributed under the GNU General Public License, version 2 or any later version. WordPress plugins are designed to run as extensions of WordPress, so using a GPL-compatible license is the standard approach for WordPress plugin development.
-
-`GPL-2.0-or-later` means you may use, study, modify and redistribute this plugin under the terms of **GPL version 2 or, at your option, any later version of the GPL**.
-
-The “or later” designation avoids permanently restricting the project to GPL version 2 and maintains compatibility with future versions of the GNU GPL.
-
-See [LICENSE](LICENSE) for the complete license terms.
+Licensed under **GPL-2.0-or-later**. See [LICENSE](LICENSE) for the complete terms.
 
 ## Author
 
