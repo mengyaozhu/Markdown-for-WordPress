@@ -149,7 +149,7 @@ The goal of the project is straightforward and reliable conversion of the Markdo
 
 ## Installation
 
-Download `markdown-for-wordpress-VERSION.zip` from the [GitHub Releases page](https://github.com/mengyaozhu/Markdown-for-WordPress/releases).
+Download `markdown-for-wordpress-VERSION.zip` under **Assets** on the [GitHub Releases page](https://github.com/mengyaozhu/Markdown-for-WordPress/releases). The automatically generated **Source code** archives are not the installable plugin ZIP.
 
 In WordPress:
 
@@ -184,12 +184,15 @@ For repository development and validation, use Node.js 22.13 or later and Python
 npm ci
 npm run check
 npm test
+python3 scripts/check-version.py
 python3 scripts/package.py
 ```
 
 The generated installable ZIP is placed in `dist/`.
 
-Releases are published automatically when a `vMAJOR.MINOR.PATCH` tag is pushed. The tag must match the versions in `package.json`, `package-lock.json`, the plugin header and the plugin stable tag. The release workflow validates versions, runs checks and tests, packages the plugin and uploads the installable ZIP to GitHub Releases.
+Releases are published automatically when a `vMAJOR.MINOR.PATCH` tag is pushed. The tag must match the versions in `package.json`, `package-lock.json`, the plugin header, the script asset versions in the plugin PHP file and the plugin stable tag. The release workflow validates versions, runs checks and tests, packages the plugin and uploads the installable ZIP to GitHub Releases.
+
+Never move or reuse a published release tag. For a corrected release, update the versions and push a new patch-version tag.
 
 ### Repository structure
 
@@ -198,6 +201,7 @@ plugin/markdown-for-wordpress/   WordPress plugin source
 tests/                           Conversion and editor tests
 scripts/                         Validation and packaging tools
 .github/workflows/validate.yml   GitHub Actions validation
+.github/workflows/release.yml    Tag-driven GitHub Releases
 ```
 
 The automated test suite checks registration contracts, clipboard handling, Classic Editor behavior and representative Markdown conversion structures.
